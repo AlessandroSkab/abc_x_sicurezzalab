@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+
+      <record model="ir.ui.view" id="project_task_inherit">
+      <field name="name">project_task_inherit</field>
+      <field name="model">project.task</field>
+      <field name="inherit_id" ref="project.view_task_form2"/>
+      <field name="arch" type="xml">
+          
+        <xpath expr="//field[@name='partner_id']" position="after">
+        <!-- <field name="indirizzo_cliente"  options="{&quot;always_reload&quot;: True}"/> -->
+        <field name="sede" widget="res_partner_many2one" context="{'show_address': 1}" options='{"always_reload": True}'/>
+        </xpath>
+      </field>
+      </record>
+  </data>
+</odoo>
